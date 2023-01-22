@@ -1,0 +1,172 @@
+a{
+    cursor: pointer;
+}
+.navbar-nav {
+    margin-left: auto;
+}
+body{
+    background: #2c3034;
+    color: #dde0e3;
+}
+button {
+    outline: none; /* Для синий ободки */
+    border: 0;
+    background: transparent;
+}
+.navbar_settings{
+    margin-top: 1%;
+}
+.logo_settings{
+    object-fit: scale-down;
+    object-position: bottom;
+    width: 50%;
+    height: 50%;
+}
+.element-animation {
+    margin: 2rem 0;
+    font-size: 3rem;
+
+    /* Скроем элемент в начальном состоянии */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.element-animation.element-show {
+    opacity: 1;
+    transition: all 2s;
+    transform: translateY(0%);
+}
+
+.frame_size{
+    min-height: 100vh;
+}
+.frame_size .carousel-item{
+    min-height: 50vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+.frame_size .carousel-item:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+.frame_size .carousel-item .container{
+    position: absolute;
+    color: transparent;
+    left: 20%;
+    top: 40%;
+    transform: translate(-10%, -10%);
+}
+.frame_size .carousel-item.active h2{
+    animation: fadeInLeft 1s ease forwards;
+}
+.frame_size .carousel-item.active p{
+    animation: fadeInRight 1s ease forwards;
+}
+.container {
+    max-width: 1100px;
+  }
+  .section-with-carousel .swiper-slide figure {
+    position: relative;
+    overflow: hidden;
+  }
+  .section-with-carousel .swiper-slide img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+  }
+  .section-with-carousel .swiper-slide figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(20%);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.4s;
+  }
+  .section-with-carousel .swiper-slide{
+    opacity: 0.2;
+    transform: scale(0.7);
+  }
+  .section-with-carousel .swiper-slide-active figcaption {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  .section-with-carousel .swiper-slide-active{
+    transform: scale(1);
+    opacity: 1;
+  }
+  .section-with-carousel .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 12px;
+    z-index: 1;
+  }
+  .section-with-carousel .carousel-controls .carousel-control {
+    opacity: 0.25;
+    transition: opacity 0.3s;
+  }
+  .section-with-carousel .carousel-controls .carousel-control:hover {
+    opacity: 1;
+  }
+
+@keyframes fadeInLeft {
+    0%{
+        opacity: 0;
+        color: #dde0e3;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        color: #dde0e3;
+        transform: translateX(0px);
+    }
+}
+@keyframes fadeInRight {
+    0%{
+        opacity: 0;
+        color: #dde0e3;
+        transform: translateX(50px);
+    }
+    100%{
+        opacity: 1;
+        color: #dde0e3;
+        transform: translateX(0px);
+    }
+}
+@media (min-width: 768px) {
+    .section-with-carousel .swiper-slide img {
+      height: 370px;
+    }
+  }
+@media (min-width: 1200px) {
+    .section-with-carousel .swiper-slide img {
+      height: 420px;
+    }
+    
+    .section-with-carousel .carousel-controls {
+      padding: 0 50px;
+    }
+  }
+
